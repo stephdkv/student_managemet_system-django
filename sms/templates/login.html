@@ -44,13 +44,12 @@
               <div class="login-right-wrap">
                 <h1>Login</h1>
                 <p class="account-subtitle">Access to our dashboard</p>
-                {% if messages %} {% for message in messages %} {% if
-                message.tags == 'error' %}
+                {% if messages %} {% for message in messages %}
                 <div
                   class="alert alert-warning alert-dismissible fade show"
                   role="alert"
                 >
-                  {% message %}
+                  {{ message }}
                   <button
                     type="button"
                     class="close"
@@ -60,7 +59,7 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                {% endif %}{% endfor %} {% endif %}
+                {% endfor %} {% endif %}
                 <form action="{% url 'doLogin' %}" method="post">
                   {% csrf_token %}
                   <div class="form-group">
